@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <style type="text/css">
+        form{
+            margin-left: 530px;
+        }
+        input{
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 3px;
+            font-size: 20px;
+            font-family: serif ;
+        }
+        button{
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            padding: 5px;
+            background-color: white;
+            font-family: serif;
+            font-size: 20px;
+            margin-left: 230px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center">Edit </h1>
+    <div th:each="empl:${employee}">
+    <form method="post">
+        <input th:value="${empl.firstName}" type="text" name="firstName" placeholder="First name" ><br>
+        <input th:value="${empl.lastName}" type="text" name="lastName" placeholder="Last name" ><br>
+        <input th:value="${empl.department}" type="text" name="department" placeholder="Department name" ><br>
+        <input th:value="${empl.jobTitle}" type="text" name="jobTitle" placeholder="Job title" ><br>
+        <input th:value="${empl.gender}" type="text" name="gender" placeholder="Gender" ><br>
+        <button type="submit">Update</button>
+    </form>
+        </div>
+
+
+</body>
+</html>
